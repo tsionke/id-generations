@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Employee Records</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>All Registered Employees</h2>
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Photo</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    fetch('/api/employees')
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.querySelector('#employeeTable tbody');
+        data.forEach(emp => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${String(emp.id).padStart(4, '0')}</td>
+            <td><img src="${emp.photo}" width="60" height="60" style="object-fit:cover;border-radius:6px;"></td>
+            <td>${emp.name}</td>
+            <td>${emp.department}</td>
+            <td>${emp.date}</td>
+            <td><button onclick="deleteEmployee(${emp.id})">Delete</button></td>
+          `;
+          tbody.appendChild(row);
+        });
+      });
+
+    function deleteEmployee(id) {
+      if (confirm("Delete this employee?")) {
+        fetch(`/api/employees/${id}`, { method: 'DELETE' })
+          .then(res => {
+            if (res.ok) location.reload();
+          });
+      }
+    }
+  </script>
+</body>
+</html>

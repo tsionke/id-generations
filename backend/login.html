@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="/backend/login.css">
+
+  
+</head>
+<body>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <form onsubmit="login(event)">
+      <div class="input-group">
+        <input type="text" id="username" required />
+        <label for="username">Username</label>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" required />
+        <label for="password">Password</label>
+      </div>
+      <button type="submit">Login</button>
+      <p class="error" id="error-msg"></p>
+    </form>
+  </div>
+
+  <script>
+    function login(event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === "admin" && password === "admin123") {
+        window.location.href = "admin";
+      } else {
+        document.getElementById("error-msg").textContent = "Invalid username or password";
+      }
+    }
+  </script>
+</body>
+</html>
