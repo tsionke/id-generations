@@ -1,0 +1,255 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f2f2f2;
+  padding: 30px;
+}
+
+
+.form-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px 30px;
+  border: 2px solid #d32f2f;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #d32f2f;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  flex: 1;
+  padding: 10px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-actions button:hover {
+  background-color: #b71c1c;
+}
+
+
+.id-card {
+  display: flex;
+  gap: 20px;
+}
+.id-card {
+  width: 360px;
+  height: 380px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  border: 2px solid #d32f2f; /* Deep red */
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+}
+
+
+.id-side {
+  width: 250px;
+  height: 600px;
+  border-radius: 15px;
+  background: #3182ce;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+
+
+.id-side img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.id-side ul {
+  text-align: left;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.barcode {
+  width: 80%;
+  height: 40px;
+  background: repeating-linear-gradient(
+    to right,
+    #ccc 0px,
+    #ccc 4px,
+    white 4px,
+    white 8px
+  );
+  margin: 20px auto 10px;
+}
+
+.footer {
+  font-size: 0.7em;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+#photo-preview {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #333;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+}
+.qrcode {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+
+  /* 🚫 Prevent circular shape */
+  border-radius: 0;
+}
+
+.qrcode canvas,
+.qrcode img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 !important; /* Force square */
+}
+.front {
+  text-align: center;
+  background: #ffffff;
+  padding: 12px;
+  color: #d32f2f;
+}
+
+.logo {
+  height: 40px;
+}
+
+.photo {
+  width: 90px;
+  height: 110px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #d32f2f;
+  margin: 10px 0;
+}
+
+.info h3 {
+  margin: 4px 0;
+  font-size: 18px;
+  color: #d32f2f;
+}
+
+.info p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #444;
+}
+.back {
+  background: #d32f2f; /* Primary red */
+  color: white;
+  padding: 12px;
+  font-size: 13px;
+  position: relative;
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.rules {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.rules li {
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.qrcode {
+  width: 90px;
+  height: 80px;
+  background: #fff;
+  margin: 10px auto;
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.footer {
+  font-size: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+}
+/*.id-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: #d32f2f;
+}
+*/
+
+#employeeTable th {
+  padding: 12px 20px;
+  text-align: center;
+}

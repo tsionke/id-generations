@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ID Card Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Employee Registration</h2>
+    <form id="employee-form" onsubmit="event.preventDefault(); generateID();">
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required placeholder="e.g., Tsion Ketema" />
+      </div>
+      <div class="form-group">
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required placeholder="e.g., Engineering" />
+      </div>
+      <div class="form-group">
+        <label for="date">Start Date:</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+      <div class="form-group">
+        <label for="photo">Upload Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" />
+      </div>
+      <div class="form-actions">
+        <button type="submit">Generate ID</button>
+        <button type="button" onclick="downloadPDF()">Download PDF</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="id-card" class="id-card">
+    <!-- Front -->
+    <div class="id-side front">
+      <img id="photo-preview" src="assets/default-photo.png" alt="Photo" />
+      <h3 id="preview-name">Name: --------</h3>
+      <p id="preview-dept">Department: --------</p>
+      <p id="preview-id">ID: ----</p>
+      <p id="preview-date">Date: ----</p>
+    </div>
+
+    <!-- Back -->
+    <div class="id-side back">
+      <h3>ABC Corporation</h3>
+      <ul>
+        <li>Wear badge at all times</li>
+        <li>Report lost badges immediately</li>
+        <li>No unauthorized access</li>
+      </ul>
+      <div id="qrcode" class="qrcode"></div>
+      <p class="footer">© 2025 ABC Corp.</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
